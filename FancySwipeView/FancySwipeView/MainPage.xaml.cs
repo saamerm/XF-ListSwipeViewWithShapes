@@ -10,9 +10,15 @@ namespace FancySwipeView
 {
     public partial class MainPage : ContentPage
     {
+        List<string> Items;
         public MainPage()
         {
+            Items = new List<string>();
+            Items.Add("asf");
+            Items.Add("asf");
+            Items.Add("asf");
             InitializeComponent();
+            CollectionView.ItemsSource = Items;
         }
     }
 }
