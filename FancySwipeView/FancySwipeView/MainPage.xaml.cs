@@ -1,24 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace FancySwipeView
 {
     public partial class MainPage : ContentPage
     {
-        List<string> Items;
+        ObservableCollection<string> Items;
         public MainPage()
         {
-            Items = new List<string>();
-            Items.Add("asf");
-            Items.Add("asf");
-            Items.Add("asf");
             InitializeComponent();
+            Items = new ObservableCollection<string>();
             CollectionView.ItemsSource = Items;
+        }
+
+        protected override void OnAppearing()
+        {
+            Items.Add("One");
+            Items.Add("Two");
+            Items.Add("Three");
+            Items.Add("Four");
+
+            base.OnAppearing();
         }
     }
 }

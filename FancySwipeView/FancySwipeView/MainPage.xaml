@@ -1,14 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FancySwipeView.MainPage">
-    <StackLayout>
+             x:Class="FancySwipeView.MainPage"
+             BackgroundColor="Wheat">
+    <StackLayout Margin="20" BackgroundColor="White">
         <CollectionView x:Name="CollectionView">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label Text="Hello"/>
+                    <StackLayout Spacing="0">
+                        <SwipeView Padding="0">
+                            <SwipeView.LeftItems>
+                                <SwipeItems>
+                                    <SwipeItemView>
+                                        <Grid HeightRequest="60"
+                                              WidthRequest="100"
+                                              RowSpacing="0"
+                                              ColumnSpacing="0"
+                                              Padding="0"
+                                              Margin="0"
+                                              BackgroundColor="LightGray">
+                                            <StackLayout Orientation="Horizontal" Padding="0" Margin="0" Spacing="0">
+                                            <Label
+                                                Text="Left"
+                                                HorizontalOptions="Center"
+                                                VerticalOptions="Center" />
+                                            <Path HorizontalOptions="EndAndExpand" Fill="White" Stroke="White" Aspect="Fill" Data="m0.19956,-0.20844l14.43749,0l0,0c7.97347,0 14.43748,6.51981 14.43748,14.56254c0,8.04265 -6.464,14.5625 -14.43748,14.5625l-14.43749,0l0,-29.12504z" >
+                                                <Path.RenderTransform>
+                                                    <RotateTransform CenterX="14.637"
+                                                                        CenterY="14.3541"
+                                                                        Angle="180" />
+                                                </Path.RenderTransform>
+                                            </Path>
+                                            </StackLayout>
+                                        </Grid>
+                                    </SwipeItemView>
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItemView>
+                                        <Grid HeightRequest="60"
+                                              WidthRequest="100"
+                                              RowSpacing="0"
+                                              ColumnSpacing="0"
+                                              BackgroundColor="LightGray">
+                                            <StackLayout Orientation="Horizontal">
+                                            <Path Fill="White" Stroke="White" Aspect="Fill" Data="m-0.05044,-0.08344l14.43749,0l0,0c7.97347,0 14.43748,6.51981 14.43748,14.56254c0,8.04265 -6.464,14.5625 -14.43748,14.5625l-14.43749,0l0,-29.12504z" />        
+                                            <Label Text="Right"
+                                                    HorizontalOptions="Center"
+                                                    VerticalOptions="Center" />
+                                            </StackLayout>
+                                        </Grid>
+                                    </SwipeItemView>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <StackLayout Padding="10" BackgroundColor="White">
+                                <Label Text="Hello"/>
+                            </StackLayout>
+                        </SwipeView>
+                        <BoxView HeightRequest="0.5"
+                                BackgroundColor="LightGray"
+                                VerticalOptions="End"/>
+                    </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-        </CollectionView>        
+        </CollectionView>
     </StackLayout>
 </ContentPage>
