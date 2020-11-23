@@ -1,6 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
-
+using Plugin.SharedTransitions;
 namespace FancySwipeView
 {
     public partial class MainPage : ContentPage
@@ -9,18 +11,25 @@ namespace FancySwipeView
         public MainPage()
         {
             InitializeComponent();
-            Items = new ObservableCollection<string>();
-            CollectionView.ItemsSource = Items;
+            //swipeView3.Open(OpenSwipeItem.LeftItems);
         }
 
-        protected override void OnAppearing()
+        void Favorite_Invoked(object sender, EventArgs e)
         {
-            Items.Add("One");
-            Items.Add("Two");
-            Items.Add("Three");
-            Items.Add("Four");
-
-            base.OnAppearing();
+            DisplayAlert("Xamarin.Forms is my favorite too! <3", "Favorite", "Woohoo!");
         }
+
+        void Delete_Invoked(object sender, EventArgs e)
+        {
+            DisplayAlert("Are you sure you want to delete Xamarin.Forms?", "Delete", "No");
+        }
+
+        async void ImageButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            // Comment below l
+            //SharedTransitionNavigationPage.SetTransitionSelectedGroup(this, "1");
+            await Navigation.PushAsync(new DetailsPage());
+        }
+
     }
 }

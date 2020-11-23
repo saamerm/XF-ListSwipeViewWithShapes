@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   x:Class="FancySwipeView.DetailsPage"
+   Title="Details"
+   BackgroundColor="Red"
+             Padding="0"
+   xmlns:sT="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions">
+   <StackLayout Spacing="0" Padding="0" Margin="0">
+        <SwipeView x:Name="swipeView2" HeightRequest="60" Padding="0" Margin="0">
+            <SwipeView.LeftItems>
+                <SwipeItems Mode="Reveal">
+                    <SwipeItemView>
+                        <Grid
+                                WidthRequest="100"
+                                BackgroundColor="LightGray">
+                            <Frame BackgroundColor="White" CornerRadius="30" IsClippedToBounds="True" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" Margin="0,0,-45,0"/>
+                            <Label
+                                Text="Left"
+                                HorizontalOptions="Start"
+                                Padding="10"
+                                VerticalOptions="CenterAndExpand" />
+                        </Grid>
+                    </SwipeItemView>
+                </SwipeItems>
+            </SwipeView.LeftItems>
+            <Label Text="Hello" Padding="20"/>
+        </SwipeView>
+        <Image Source="delete.png" sT:Transition.Name="Xamemon" />
+    </StackLayout>
+</ContentPage>

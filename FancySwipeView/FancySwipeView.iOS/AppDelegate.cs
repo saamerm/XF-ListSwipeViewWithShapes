@@ -25,6 +25,7 @@ namespace FancySwipeView.iOS
         {
             Forms.SetFlags("SwipeView_Experimental", "Shapes_Experimental");
             global::Xamarin.Forms.Forms.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
